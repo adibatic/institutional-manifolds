@@ -9,11 +9,19 @@ This project moves beyond discrete regime typologies by modeling state architect
 
 ## Visualizing the Manifold
 
-![Reference Manifold](figures/fig1_reference_manifold.png)
-*Figure 1: The continuous diffusion manifold colored by HDI and Log GDP, revealing the primary gradients of institutional development.*
+<div align="center">
+  <img src="figures/fig1_reference_manifold.png" alt="Reference Manifold">
+  <br>
+  <i>Figure 1: The continuous diffusion manifold colored by HDI and Log GDP, revealing the primary gradients of institutional development.</i>
+</div>
 
-![Trajectory Archetypes](figures/fig4_trajectory_typologies.png)
-*Figure 2: Representative developmental archetypes (Direct, Meandering, and Erratic) overlaid on the global manifold, illustrating distinct regimes of institutional evolution.*
+<br><br>
+
+<div align="center">
+  <img src="figures/fig4_trajectory_typologies.png" alt="Trajectory Archetypes" width="600">
+  <br>
+  <i>Figure 2: Representative developmental archetypes (Direct, Meandering, and Erratic) overlaid on the global manifold, illustrating distinct regimes of institutional evolution.</i>
+</div>
 
 ### Key Methodology & Findings
 * **Diffusion Maps:** Capturing non-linear relationships in institutional data (V-Dem & WDI) to define a "Reference Manifold."

@@ -10,8 +10,6 @@
 \usepackage{hyperref}
 \usepackage{xurl}
 \usepackage{float}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
 \usepackage[expansion=false]{microtype}
 \geometry{margin=1in}
 \setstretch{1.2}
@@ -90,14 +88,12 @@ While Diffusion Maps reveal the shape of the data, Topological Data Analysis (TD
 Using persistent homology, we construct a Vietoris-Rips complex across our high-\hspace{0pt}dimensional space. We measure Betti numbers, specifically the zeroth Betti number ($H_0$), which counts connected components, and the first Betti number ($H_1$), which counts structural loops or voids. In the context of political economy, an $H_1$ void represents a ``forbidden zone'' or an inherently unstable regime configuration. If a topological hole exists, it implies that a state attempting to adopt the institutional attributes of that region will face overwhelming systemic pressure to collapse toward the edges of the void.
 
 \subsection{Historical Projection and Trajectory Metrics}
-To analyze how states navigate this geometry, historical time-series data (1990--2026) is projected onto the static reference manifold using a Nyström extension. This prevents historical volatility from warping the underlying geometric terrain.
+To analyze how states navigate this geometry, historical time-series data (1990--2026) is projected onto the static reference manifold using a Nyström extension. This prevents historical volatility from warping the underlying geometric terrain. We introduce two macro-po\-lit\-i\-cal metrics to quantify the institutional ``friction'' or ``wasted effort'' of a state's development over $N$ time steps.
 
-We introduce two macro-po\-lit\-i\-cal metrics to quantify the institutional ``friction'' or ``wasted effort'' of a state's development over $N$ time steps:
-\begin{enumerate}
-    \item \textbf{Trajectory Tortuosity ($T$):} The ratio of the total Euclidean path length traversed over the net displacement \cite{benhamou2004reliably}. This measures how directly a state achieved its current governance configuration.
-          $$T = \frac{\sum_{t=1}^{N-1} \lVert x_{t+1} - x_t \rVert}{\lVert x_N - x_1 \rVert}$$
-    \item \textbf{Geodesic Inefficiency ($I$):} While Euclidean space ignores the manifold's shape, geodesic distance respects the ``terrain'' of allowable governance. We compute the shortest path $G$ through a $k$-NN graph of the manifold and define inefficiency as $I = \frac{G}{L}$, where $L$ is the Euclidean length. This measures the specific cost of instituting reforms that move \textit{against} the natural grain of the systemic landscape.
-\end{enumerate}
+The first metric, \textbf{Trajectory Tortuosity ($T$)}, represents the ratio of the total Euclidean path length traversed over the net displacement \cite{benhamou2004reliably}. This measures how directly a state achieved its current governance configuration and is formally defined as:
+$$T = \frac{\sum_{t=1}^{N-1} \lVert x_{t+1} - x_t \rVert}{\lVert x_N - x_1 \rVert}$$
+
+The second metric, \textbf{Geodesic Inefficiency ($I$)}, accounts for the fact that pure Euclidean space ignores the manifold's actual shape. While Euclidean distance measures a straight line, geodesic distance respects the ``terrain'' of allowable governance. We compute the shortest path $G$ through a $k$-NN graph of the manifold and define inefficiency as $I = \frac{G}{L}$, where $L$ is the Euclidean length. This metric isolates the specific cost of instituting reforms that move \textit{against} the natural grain of the systemic landscape.
 
 To account for the extreme right-skew inherent to ratio bounds, both $T$ and $I$ undergo a logarithmic transformation before being subjected to unsupervised $K$-Means clustering to organically identify macroscopic trajectory paradigms.
 
@@ -108,8 +104,8 @@ Spearman correlation diagnostics reveal the empirical nature of the diffusion ma
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=1\textwidth]{../figures/fig1_reference_manifold.eps}
-    \caption{\textbf{The Reference Manifold.} A side-by-side comparison of the 2026 governance manifold. Figure 1A (colored by HDI) reveals a smooth developmental gradient across Socio-Institutional Capacity (Axis 1). Figure 1B (colored by Log GDP) illustrates the ``rentier state anomaly,'' where natural resource wealth pulls states upward along the Autocratic Modernization gradient (Axis 2) without corresponding institutional progress.}
+    \includegraphics[width=0.95\textwidth]{../figures/fig1_reference_manifold.eps}
+    \caption{\textbf{The Reference Manifold.} A side-by-side comparison of the 2026 governance manifold. \textbf{a)} Colored by HDI, the manifold reveals a smooth developmental gradient across Socio-Institutional Capacity (Axis 1). \textbf{b)} Colored by Log GDP, it illustrates the ``rentier state anomaly,'' where natural resource wealth pulls states upward along the Autocratic Modernization gradient (Axis 2) without corresponding institutional progress.}
     \label{fig:manifold}
 \end{figure}
 
@@ -119,7 +115,7 @@ By calculating the multidimensional density gradient and isolating the bounds of
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.45\textwidth]{../figures/fig2_persistence_barcode.eps}
+    \includegraphics[width=0.5\textwidth]{../figures/fig2_persistence_barcode.eps}
     \caption{\textbf{Persistence Barcode.} TDA of the high-dimensional feature space reveals 40 persistent $H_1$ loops (blue), mathematically proving the existence of structural voids and developmental traps in the global governance system.}
     \label{fig:barcode}
 \end{figure}
@@ -147,7 +143,7 @@ Analysis of systemic dispersion falsifies the post-Cold War convergence hypothes
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.7\textwidth]{../figures/fig3_global_dispersion.eps}
+    \includegraphics[width=0.75\textwidth]{../figures/fig3_global_dispersion.eps}
     \caption{\textbf{Phase-Space Dispersion Over Time.} The mean Euclidean distance of all states from the global centroid (1990--2026).}
     \label{fig:dispersion}
 \end{figure}
@@ -159,7 +155,7 @@ The first archetype, \textbf{Direct} ($N=88$), consists of states with low tortu
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.6\textwidth]{../figures/fig4_trajectory_typologies.eps}
+    \includegraphics[width=0.65\textwidth]{../figures/fig4_trajectory_typologies.eps}
     \caption{\textbf{Governance Trajectory Typologies (1990--2026).} Historical paths illustrating Direct development (Dominican Republic, blue), Meandering transitions (Mauritania, orange), and Erratic regime cycling (Kyrgyzstan, red).}
     \label{fig:trajectories}
 \end{figure}
